@@ -1,0 +1,16 @@
+version: "3"
+services:
+  apache:
+    image: 'apache'
+    build: 
+       context: .
+       dockerfile: ./Dockerfile
+    ports:
+        - '80:80'
+  webchecker:
+    image: 'webchecker'
+    build: 
+       context: .
+       dockerfile: ./check.Dockerfile
+    ports:
+       - 3000:3000
